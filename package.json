@@ -1,6 +1,6 @@
 {
   "name": "npm-normalize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "normalize npm package metadata",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,8 @@
   ],
   "author": "Elijah Insua <tmpvar@gmail.com>",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "semver": "~1.1.4"
+  }
 }

@@ -14,8 +14,11 @@ module.exports = function(project) {
     latestVersionString = project['dist-tags'].latest
     latest = project.versions[latestVersionString];
   } else if (Object.keys(project['dist-tags']).length) {
-    // TODO: sort by semver...
-    latestVersionString = Object.keys(project['dist-tags'])[0];
+
+    latestVersionString = Object.keys(project['dist-tags']).sort(function(a, b) {
+      return (semver.gt(a,b)) ? -1 : 1;
+    })[0];
+
     latest = project.versions[latestVersionString];
   } else {
     latest = project;
