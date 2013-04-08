@@ -104,7 +104,5 @@ module.exports = function(project) {
     ret.keywords = ret.keywords.split(',');
   }
 
-  ret.orig = project;
-
   return ret;
 }
