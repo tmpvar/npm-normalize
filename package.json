@@ -1,0 +1,21 @@
+{
+  "name": "npm-normalize",
+  "version": "0.0.1",
+  "description": "normalize npm package metadata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/solids/npm-normalize.git"
+  },
+  "keywords": [
+    "npm",
+    "normalize",
+    "metadata"
+  ],
+  "author": "Elijah Insua <tmpvar@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
