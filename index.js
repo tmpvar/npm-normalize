@@ -29,15 +29,15 @@ module.exports = function(project) {
   }
 
   ret.id = ret.name = project.name;
-  ret.description = project.description;
-  ret.version = latestVersionString;
+  ret.description = project.description || '';
+  ret.version = latestVersionString || '';
   ret.versions = project['dist-tags'] || {};
   delete ret.versions.latest;
 
   ret.totalReleases = Object.keys(ret.versions || {}).length;
 
 
-  ret.readme = latest.readme || project.readme;
+  ret.readme = latest.readme || project.readme || '';
   ret.maintainers = project.maintainers || latest.maintainers;
 
 
@@ -49,9 +49,9 @@ module.exports = function(project) {
     }
   } else if (ret.maintainers) {
     ret.author = ret.maintainers[0].name;
-  } else {
-    throw new Error('uncaught author');
   }
+
+  ret.author = ret.author || "unknown";
 
 
   ret.repository = latest.repository || { url : '' };
