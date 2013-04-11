@@ -14,11 +14,11 @@ module.exports = function(project) {
       return;
     }
 
-    var versionKeys = Object.keys(project.versions);
-    versionKeys.sort(function(a,b) {
+    ret.versions = Object.keys(project.versions) || [];
+    ret.versions.sort(function(a,b) {
       return semver.gt(a, b) ? -1 : 1;
     });
-    project['dist-tags'] = { latest: versionKeys[0] };
+    project['dist-tags'] = { latest: ret.versions[0] };
   }
 
   var latestVersionString, latest;
@@ -43,15 +43,21 @@ module.exports = function(project) {
   ret.id = ret.name = project.name;
   ret.description = project.description || '';
   ret.version = latestVersionString || '';
-  ret.versions = project['dist-tags'] || {};
-  delete ret.versions.latest;
-
-  ret.totalReleases = Object.keys(ret.versions || {}).length;
-
 
   ret.readme = latest.readme || project.readme || '';
-  ret.maintainers = project.maintainers || latest.maintainers;
+  if (!ret.readme) {
+    delete ret.readme;
+  }
 
+  var maintainers = project.maintainers || latest.maintainers;
+  if (maintainers && maintainers.length) {
+    ret.maintainers = [];
+    maintainers.forEach(function(maintainer) {
+      if (maintainer.name) {
+        ret.maintainers.push(maintainer.name);
+      }
+    });
+  }
 
   if (latest._npmUser) {
     if (latest._npmUser.name) {
@@ -60,21 +66,26 @@ module.exports = function(project) {
      ret.author = latest._npmUser;
     }
   } else if (ret.maintainers) {
-    ret.author = ret.maintainers[0].name;
+    ret.author = ret.maintainers[0];
   }
 
-  ret.author = ret.author || "unknown";
 
-
-  ret.repository = latest.repository || { url : '' };
+  ret.repository = latest.repository;
   ret.homepage = latest.homepage ||
                  project.homepage;
 
+  if (ret.repository && typeof ret.repository.url !== 'undefined') {
+    ret.repository = ret.repository.url;
+  }
+
+  if (!ret.repository) {
+    delete ret.repository;
+  }
 
   if (!ret.homepage) {
-    var repoUrl = ret.repository.url || ret.repository;
+    var repoUrl = ret.repository;
 
-    if (repoUrl.replace) {
+    if (repoUrl && repoUrl.replace) {
       ret.homepage = repoUrl.replace(/.*\/\//,'http://')
     } else {
       ret.homepage = 'http://npmjs.org/package/' + project.name;
@@ -100,15 +111,11 @@ module.exports = function(project) {
     });
   }
 
-  if (ret.license.length === 0) {
-    delete ret.license;
-  }
-
-  var time = latest.time || project.time;
+  var time = latest.time || project.time || {};
   ret.created =  project.ctime || time.created || fallbackDate;
   ret.modified = project.mtime || time.modified || fallbackDate;
 
-  if (time) {
+  if (Object.keys(time).length > 2) {
     delete time.created;
     delete time.modified;
     ret.time = time;
@@ -122,5 +129,13 @@ module.exports = function(project) {
     ret.keywords = ret.keywords.split(',');
   }
 
-  return ret;
+  // Final cleanup pass
+  var f = {};
+  Object.keys(ret).forEach(function(key) {
+    if (typeof ret[key] !== 'undefined' && ret[key] !== null) {
+      f[key] = ret[key];
+    }
+  });
+
+  return f;
 }

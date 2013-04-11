@@ -16,6 +16,7 @@ test('undefined is returned when invalid', function(t) {
 test('appropriate properties are extracted', function(t) {
   cases.forEach(function(c) {
     var n = normalize(c);
+    console.log(n);
     t.equal(n.id, 'vec2');
     t.equal(n.name, 'vec2');
     t.equal(n.description, 'Library for manipulating 2d vectors');
@@ -23,12 +24,7 @@ test('appropriate properties are extracted', function(t) {
     t.ok(n.created);
     t.ok(n.modified);
     t.equal(n.version, '1.2.0');
-
-    t.ok(
-      !n.license ||
-      (n.license && n.license.length)
-    );
-
+    t.ok(n.license && typeof n.license.join === 'function');
     t.ok(n.homepage);
     t.equal(n.author, 'tmpvar');
 
