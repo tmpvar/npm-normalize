@@ -5,8 +5,20 @@ module.exports = function(project) {
 
   var ret = {};
 
-  if (!project || !project['dist-tags'] || project.error) {
+  if (!project || project.error) {
     return;
+  }
+
+  if (!project['dist-tags']) {
+    if (!project.versions) {
+      return;
+    }
+
+    var versionKeys = Object.keys(project.versions);
+    versionKeys.sort(function(a,b) {
+      return semver.gt(a, b) ? -1 : 1;
+    });
+    project['dist-tags'] = { latest: versionKeys[0] };
   }
 
   var latestVersionString, latest;
@@ -88,14 +100,20 @@ module.exports = function(project) {
     });
   }
 
-  var time = latest.time || project.time || {};
+  if (ret.license.length === 0) {
+    delete ret.license;
+  }
+
+  var time = latest.time || project.time;
   ret.created =  project.ctime || time.created || fallbackDate;
   ret.modified = project.mtime || time.modified || fallbackDate;
 
-  delete time.created;
-  delete time.modified;
+  if (time) {
+    delete time.created;
+    delete time.modified;
+    ret.time = time;
+  }
 
-  ret.releaseTimes = time;
   ret.users = latest.users || project.users;
   ret.dependencies = latest.dependencies;
   ret.devDependencies = latest.devDependencies;

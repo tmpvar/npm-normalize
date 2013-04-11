@@ -20,5 +20,8 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "semver": "~1.1.4"
+  },
+  "devDependencies": {
+    "tap": "~0.4.1"
   }
 }
