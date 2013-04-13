@@ -49,9 +49,9 @@ module.exports = function(project) {
     delete ret.readme;
   }
 
+  ret.maintainers = [];
   var maintainers = project.maintainers || latest.maintainers;
   if (maintainers && maintainers.length) {
-    ret.maintainers = [];
     maintainers.forEach(function(maintainer) {
       if (maintainer.name) {
         ret.maintainers.push(maintainer.name);
@@ -70,12 +70,15 @@ module.exports = function(project) {
   }
 
 
-  ret.repository = latest.repository;
-  ret.homepage = latest.homepage ||
-                 project.homepage;
+  ret.repository = latest.repository || '';
+  ret.homepage = latest.homepage || project.homepage;
 
-  if (ret.repository && typeof ret.repository.url !== 'undefined') {
-    ret.repository = ret.repository.url;
+  if (Array.isArray(ret.repository)) {
+    ret.repository = ret.repository[0];
+  }
+
+  if (ret.repository && typeof ret.repository !== 'string') {
+    ret.repository = ret.repository.url || ret.repository.web || '';
   }
 
   if (!ret.repository) {
@@ -122,20 +125,21 @@ module.exports = function(project) {
   }
 
   ret.users = latest.users || project.users;
-  ret.dependencies = latest.dependencies;
-  ret.devDependencies = latest.devDependencies;
+  ret.dependencies = [];
+  if (latest.dependencies) {
+    ret.dependencies = Object.keys(latest.dependencies);
+  }
+
+  ret.dependencies = [];
+  if (latest.devDependencies) {
+    ret.devDependencies = Object.keys(latest.devDependencies);
+  }
+
   ret.keywords = latest.keywords || latest.tags || [];
   if (ret.keywords.split) {
     ret.keywords = ret.keywords.split(',');
   }
 
-  // Final cleanup pass
-  var f = {};
-  Object.keys(ret).forEach(function(key) {
-    if (typeof ret[key] !== 'undefined' && ret[key] !== null) {
-      f[key] = ret[key];
-    }
-  });
 
-  return f;
+  return ret;
 }
