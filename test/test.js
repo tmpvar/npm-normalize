@@ -36,6 +36,7 @@ test('appropriate properties are extracted', function(t) {
     t.ok(Array.isArray(n.dependencies));
     t.ok(Array.isArray(n.devDependencies));
     t.ok(Array.isArray(n.maintainers));
+    t.ok(Array.isArray(n.users));
     t.ok(Array.isArray(n.license));
   });
   t.end();

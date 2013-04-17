@@ -124,7 +124,7 @@ module.exports = function(project) {
     ret.time = time;
   }
 
-  ret.users = latest.users || project.users;
+  ret.users = Object.keys(latest.users || project.users || {});
   ret.dependencies = [];
   if (latest.dependencies) {
     ret.dependencies = Object.keys(latest.dependencies);
