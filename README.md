@@ -18,6 +18,8 @@ require('request').get({
   obj = normalize(obj);
 })
 
+```
+
 # License
 
 MIT © 2013 solids l.l.c.
