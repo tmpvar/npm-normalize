@@ -43,6 +43,7 @@ module.exports = function(project) {
   ret.id = ret.name = project.name;
   ret.description = project.description || '';
   ret.version = latestVersionString || '';
+  ret.time = project.time || [];
 
   ret.readme = latest.readme || project.readme || '';
   if (!ret.readme) {
@@ -121,11 +122,10 @@ module.exports = function(project) {
   var time = latest.time || project.time || {};
   ret.created =  project.ctime || time.created || fallbackDate;
   ret.modified = project.mtime || time.modified || fallbackDate;
-
   if (Object.keys(time).length > 2) {
     delete time.created;
     delete time.modified;
-    ret.time = time;
+    ret.times = time;
   }
 
   ret.users = Object.keys(latest.users || project.users || {});
@@ -143,7 +143,6 @@ module.exports = function(project) {
   if (ret.keywords.split) {
     ret.keywords = ret.keywords.split(',');
   }
-
-
+  
   return ret;
 }

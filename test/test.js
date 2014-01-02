@@ -29,8 +29,8 @@ test('appropriate properties are extracted', function(t) {
     t.equal(n.author, 'tmpvar');
 
     t.ok(
-      !n.time ||
-      (n.time && Object.keys(n.time).length === 10)
+      !n.times ||
+      (n.times && Object.keys(n.times).length === 10)
     );
 
     t.ok(Array.isArray(n.dependencies));
