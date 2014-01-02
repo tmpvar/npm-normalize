@@ -41,3 +41,24 @@ test('appropriate properties are extracted', function(t) {
   });
   t.end();
 });
+
+test('devDependencies and dependencies should work', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        dependencies : { a: 1, b: 2 },
+        devDependencies : {
+          x : 1,
+          y : 2
+        }
+      }
+    }
+  })
+  t.equal(2, out.dependencies.length);
+  t.equal('a', out.dependencies[0]);
+  t.equal('b', out.dependencies[1]);
+  t.equal(2, out.dependencies.length);
+  t.end();
+});
+
+

@@ -44,6 +44,7 @@ module.exports = function(project) {
   ret.description = project.description || '';
   ret.version = latestVersionString || '';
   ret.time = project.time || [];
+  ret.scripts = latest.scripts || project.scripts || {};
 
   ret.readme = latest.readme || project.readme || '';
   if (!ret.readme) {
@@ -134,7 +135,7 @@ module.exports = function(project) {
     ret.dependencies = Object.keys(latest.dependencies);
   }
 
-  ret.dependencies = [];
+  ret.devDependencies = [];
   if (latest.devDependencies) {
     ret.devDependencies = Object.keys(latest.devDependencies);
   }
