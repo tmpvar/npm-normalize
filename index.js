@@ -105,8 +105,12 @@ module.exports = function(project) {
 
   if (license) {
     if (!license.push) {
-      license = license.type || license.name || license;
-      license = license.split(/[^a-z0-9]/i);
+      license = license.type || license.name || license.license || license;
+      if (license.split) {
+        license = license.split(/[^a-z0-9]/i);
+      } else {
+        license = [];
+      }
     }
 
     license.forEach(function(l) {

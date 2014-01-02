@@ -1,0 +1,537 @@
+{
+    "_id": "vec2",
+    "_rev": "21-1e394af6e2bffb2610026ff83053eba8",
+    "name": "vec2",
+    "description": "Library for manipulating 2d vectors",
+    "dist-tags": {
+        "latest": "1.2.0"
+    },
+    "versions": {
+        "0.0.1": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "0.0.1",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "mocha test/test.js",
+                "build": "uglifyjs lib/vec2.js > lib/vec2.min.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "_id": "vec2@0.0.1",
+            "dependencies": {},
+            "optionalDependencies": {},
+            "engines": {
+                "node": "*"
+            },
+            "_engineSupported": true,
+            "_npmVersion": "1.1.2",
+            "_nodeVersion": "v0.6.9",
+            "_defaultsLoaded": true,
+            "dist": {
+                "shasum": "3e712c2784e67dfdfdb5353aaa25afd54202708f",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-0.0.1.tgz"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "0.1.0": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "0.1.0",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js",
+                "build": "uglifyjs lib/vec2.js > lib/vec2.min.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Example Usage\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@0.1.0",
+            "dist": {
+                "shasum": "8d0e2a39cd7a328570dce0e3c75b62e382591e01",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-0.1.0.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "0.2.0": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "0.2.0",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js",
+                "build": "uglifyjs lib/vec2.js > lib/vec2.min.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Example Usage\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@0.2.0",
+            "dist": {
+                "shasum": "439d41d8479fe5fd35fd8836f796968d6804618c",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-0.2.0.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.0.0": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.0.0",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js",
+                "build": "uglifyjs lib/vec2.js > lib/vec2.min.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.0.0",
+            "dist": {
+                "shasum": "a4dff07c234f01f01312cadbc752d3f788b8f383",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.0.0.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.0.1": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.0.1",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.0.1",
+            "dist": {
+                "shasum": "c0212eeca2caa1ab1e818688213ac042cc0de1ee",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.0.1.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.0.2": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.0.2",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.0.2",
+            "dist": {
+                "shasum": "bfcdf94134d8a57f72285d7da2d60aca07aed591",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.0.2.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.0.3": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.0.3",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.0.3",
+            "dist": {
+                "shasum": "354b5565bdca3de90771e01798cc23e91dc8df16",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.0.3.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.1.0": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.1.0",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.1.0",
+            "dist": {
+                "shasum": "ea0124a6fcc6cd36f96440b5cd9ffa65ea21b3fc",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.1.0.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.1.1": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.1.1",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.1.1",
+            "dist": {
+                "shasum": "73e4639cf84997dd0b35557ba2e95f5369490b9b",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.1.1.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ]
+        },
+        "1.2.0": {
+            "author": {
+                "name": "Elijah Insua",
+                "email": "tmpvar@gmail.com",
+                "url": "http://tmpvar.com"
+            },
+            "name": "vec2",
+            "description": "Library for manipulating 2d vectors",
+            "version": "1.2.0",
+            "homepage": "https://github.com/tmpvar/vec2.js",
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/tmpvar/vec2.js.git"
+            },
+            "main": "lib/vec2.js",
+            "scripts": {
+                "test": "node_modules/mocha/bin/mocha test/test.js",
+                "bench": "./test/bench/run.sh"
+            },
+            "devDependencies": {
+                "chai": "0.5.0",
+                "mocha": "0.14.1"
+            },
+            "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Use\n\n```javascript\n  var a = new Vec2(10, 10), // new keyword\n      b = Vec2(100, 10); // call the constructor directly\n\n  console.log(a.distance(b)); // 90\n```\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n * dot\n * perpDot\n * angleTo\n * divide\n * toArray\n * fromArray\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n```html\n<script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n<script type=\"text/javascript>\n   var v = new Vec2();\n</script>\n```\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+            "readmeFilename": "README.md",
+            "_id": "vec2@1.2.0",
+            "dist": {
+                "shasum": "0220ac5a8762efab883739d083978a4676c06b9e",
+                "tarball": "http://registry.npmjs.org/vec2/-/vec2-1.2.0.tgz"
+            },
+            "_npmVersion": "1.1.65",
+            "_npmUser": {
+                "name": "tmpvar",
+                "email": "tmpvar@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "tmpvar",
+                    "email": "tmpvar@gmail.com"
+                }
+            ],
+            "license" : {
+                "license" : "MIT"
+            }
+        }
+    },
+    "readme": "# Vec2.js\n\n  A generic library useful when you need to work with points/vectors in 2d space.\n\n## Example Usage\n\n    var a = new Vec2(10, 10), b = new Vec2(100, 10);\n    console.log(a.distance(b)); // 90\n\n### Supported operations\n\n * set\n * zero\n * negate\n * add\n * subtract\n * multiply\n * rotate\n * length\n * lengthSquared\n * distance\n * normalize\n * equal\n * abs\n * min\n * max\n * clamp\n * isValid\n * skew\n\n**Stuff to Note**: most of the Vec2's methods take a `returnNew` as the last parameter.  If passed a truthy value, a new vector will be returned to you.  Otherwise the operation will be applied to `this` and `this` will be returned.\n\n## Install\n\n### Browser\n\n    <script type=\"text/javascript\" src=\"https://raw.github.com/tmpvar/vec2.js/master/lib/vec2.min.js\"></script>\n    <script type=\"text/javascript>\n       var v = new Vec2();\n    </script>\n\n### Node\n\ninstall with npm\n\n    npm install vec2\n\nand then require it!\n\n    var Vec2 = require('vec2');\n",
+    "maintainers": [
+        {
+            "name": "tmpvar",
+            "email": "tmpvar@gmail.com"
+        }
+    ],
+    "time": {
+        "modified": "2013-04-07T20:39:01.473Z",
+        "created": "2012-03-09T00:04:42.533Z",
+        "0.0.1": "2012-03-09T00:04:43.828Z",
+        "0.1.0": "2012-12-17T01:08:32.239Z",
+        "0.2.0": "2012-12-19T06:34:34.062Z",
+        "1.0.0": "2013-01-29T04:34:19.230Z",
+        "1.0.1": "2013-01-29T04:39:12.794Z",
+        "1.0.2": "2013-02-17T04:35:16.356Z",
+        "1.0.3": "2013-02-18T01:55:56.299Z",
+        "1.1.0": "2013-02-20T21:33:34.944Z",
+        "1.1.1": "2013-02-27T01:10:20.790Z",
+        "1.2.0": "2013-04-07T20:39:01.473Z"
+    },
+    "author": {
+        "name": "Elijah Insua",
+        "email": "tmpvar@gmail.com",
+        "url": "http://tmpvar.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tmpvar/vec2.js.git"
+    },
+    "_attachments": {
+        "vec2-1.2.0.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 21,
+            "digest": "md5-lCZGTznAvrNxda0TMRY3iw==",
+            "length": 42096,
+            "stub": true
+        },
+        "vec2-1.1.1.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 19,
+            "digest": "md5-CGu63yFipHA21F97qRLpkw==",
+            "length": 41075,
+            "stub": true
+        },
+        "vec2-1.1.0.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 17,
+            "digest": "md5-h1z2rW4u61Mh2sgdFlPNkQ==",
+            "length": 41093,
+            "stub": true
+        },
+        "vec2-1.0.3.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 15,
+            "digest": "md5-JZHIjEN909ELwtJeqPWdYA==",
+            "length": 40825,
+            "stub": true
+        },
+        "vec2-1.0.2.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 13,
+            "digest": "md5-ivPrW3Qcjv3ePyjLGR7gLg==",
+            "length": 40776,
+            "stub": true
+        },
+        "vec2-1.0.1.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 11,
+            "digest": "md5-EjqIgOoc9tOvdc2njm+JnQ==",
+            "length": 40826,
+            "stub": true
+        },
+        "vec2-1.0.0.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 9,
+            "digest": "md5-M0GpNDhp5bmtrCNcEKza9A==",
+            "length": 40020,
+            "stub": true
+        },
+        "vec2-0.2.0.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 7,
+            "digest": "md5-8K3YmeyaiFKKLwEUd3CEwg==",
+            "length": 40099,
+            "stub": true
+        },
+        "vec2-0.1.0.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 5,
+            "digest": "md5-cwrR4zU9SWBGRX+osevWHQ==",
+            "length": 40015,
+            "stub": true
+        },
+        "vec2-0.0.1.tgz": {
+            "content_type": "application/octet-stream",
+            "revpos": 3,
+            "digest": "md5-0tjs3qArUxsTqrqSra+otQ==",
+            "length": 39385,
+            "stub": true
+        }
+    }
+}
