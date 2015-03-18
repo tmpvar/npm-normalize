@@ -1,5 +1,7 @@
 var semver = require('semver');
 var fallbackDate = (new Date("jan 1 2010")).toISOString();
+var url = require('url');
+
 // Normalize npm module structure coming from couch
 module.exports = function(project) {
 
@@ -88,10 +90,14 @@ module.exports = function(project) {
   }
 
   if (!ret.homepage) {
-    var repoUrl = ret.repository;
+    var repoUrl = String(ret.repository);
 
-    if (repoUrl && repoUrl.replace) {
-      ret.homepage = repoUrl.replace(/.*\/\//,'http://')
+    if (repoUrl) {
+      if (repoUrl.substring(0, 4) !== 'http') {
+        ret.homepage = repoUrl.replace(/.*:\/\//,'http://');
+      } else {
+        ret.homepage = repoUrl;
+      }
     } else {
       ret.homepage = 'http://npmjs.org/package/' + project.name;
     }
@@ -101,6 +107,11 @@ module.exports = function(project) {
     ret.homepage = ret.homepage.url;
   }
 
+  var parts = url.parse(String(ret.homepage));
+  if (parts.path && parts.path.replace) {
+    parts.pathname = parts.path = parts.path.replace(/\/\//g,'/');
+    ret.homepage = url.format(parts);
+  }
 
   var license = latest.license || project.license
   ret.license = [];
@@ -144,6 +155,6 @@ module.exports = function(project) {
   if (ret.keywords.split) {
     ret.keywords = ret.keywords.split(',');
   }
-  
+
   return ret;
 }

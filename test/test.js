@@ -1,4 +1,4 @@
-var test = require('tap').test,
+var test = require('tape'),
     fs = require('fs'),
     path = require('path'),
     normalize = require('../');
@@ -58,6 +58,30 @@ test('devDependencies and dependencies should work', function(t) {
   t.equal('a', out.dependencies[0]);
   t.equal('b', out.dependencies[1]);
   t.equal(2, out.dependencies.length);
+  t.end();
+});
+
+test('double slash in url (homepage)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        homepage : 'https://test//something'
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://test/something');
+  t.end();
+});
+
+test('double slash in url (repo)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        repository : 'git://test//something'
+      }
+    }
+  })
+  t.equal(out.homepage, 'http://test/something');
   t.end();
 });
 
