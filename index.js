@@ -107,6 +107,14 @@ module.exports = function(project) {
     ret.homepage = ret.homepage.url;
   }
 
+  ret.homepage = ret.homepage.replace('.git', '');
+
+  if (String(ret.homepage).indexOf('github') > -1) {
+    ret.homepage = 'https://github.com/' + ret.homepage.split('/').map(function(a) {
+      return a.split(/[:\/\.]/).pop();
+    }).join('/');
+  }
+
   var parts = url.parse(String(ret.homepage));
   if (parts.path && parts.path.replace) {
     parts.pathname = parts.path = parts.path.replace(/\/\//g,'/');

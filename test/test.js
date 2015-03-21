@@ -85,4 +85,27 @@ test('double slash in url (repo)', function(t) {
   t.end();
 });
 
+test('weird/invalid github format (repo=github:user/repo)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        repository : 'github:user/something.git'
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://github.com/user/something');
+  t.end();
+});
+
+test('weird/invalid github format (homepage=github:user/repo)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        homepage : 'github:user/something.git'
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://github.com/user/something');
+  t.end();
+});
 
