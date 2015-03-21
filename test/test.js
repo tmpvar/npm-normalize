@@ -109,3 +109,15 @@ test('weird/invalid github format (homepage=github:user/repo)', function(t) {
   t.end();
 });
 
+test('weird/invalid github format (homepage=github:user/repo)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        homepage : 'http://github.com/user/something.git'
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://github.com/user/something');
+  t.end();
+});
+

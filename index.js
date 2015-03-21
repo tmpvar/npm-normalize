@@ -112,7 +112,7 @@ module.exports = function(project) {
   if (String(ret.homepage).indexOf('github') > -1) {
     ret.homepage = 'https://github.com/' + ret.homepage.split('/').map(function(a) {
       return a.split(/[:\/\.]/).pop();
-    }).join('/');
+    }).slice(-2).join('/');
   }
 
   var parts = url.parse(String(ret.homepage));
