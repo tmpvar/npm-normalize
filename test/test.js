@@ -121,3 +121,14 @@ test('weird/invalid github format (homepage=github:user/repo)', function(t) {
   t.end();
 });
 
+test('invalid license format', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        license : { type : "", url: "" }
+      }
+    }
+  })
+  t.deepEqual(out.license, []);
+  t.end();
+});
