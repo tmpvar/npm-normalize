@@ -121,6 +121,30 @@ test('weird/invalid github format (homepage=github:user/repo)', function(t) {
   t.end();
 });
 
+test('homepage array (repository)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        repository : ['http://github.com/user/something.git']
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://github.com/user/something');
+  t.end();
+});
+
+test('homepage array (homepage)', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        homepage : ['http://github.com/user/something.git']
+      }
+    }
+  })
+  t.equal(out.homepage, 'https://github.com/user/something');
+  t.end();
+});
+
 test('invalid license format', function(t) {
   var out = normalize({
     versions: {
