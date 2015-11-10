@@ -180,3 +180,18 @@ test('license underscore', function(t) {
   t.deepEqual(out.license, ['CC_BY_4.0']);
   t.end();
 });
+
+test('license mispelled', function(t) {
+  var mispellings = ['lisence', 'licence', 'lisense']
+  mispellings.forEach(function(key) {
+    var version = {}
+    version[key] =  "CC_BY_4.0"
+    var out = normalize({
+      versions: {
+        "0.0.0" : version
+      }
+    })
+    t.deepEqual(out.license, ['CC_BY_4.0']);
+  })
+  t.end();
+});

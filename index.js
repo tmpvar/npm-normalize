@@ -121,7 +121,13 @@ module.exports = function(project) {
     ret.homepage = url.format(parts);
   }
 
-  var license = latest.license || project.license
+  // handle package.json license misspellings
+  var keys = ['license', 'licence', 'lisense', 'lisence']
+
+  var license = keys.map(function(key) {
+    return latest[key] || project[key]
+  }).filter(Boolean)[0]
+
   ret.license = [];
 
   if (license) {
