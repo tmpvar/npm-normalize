@@ -128,7 +128,7 @@ module.exports = function(project) {
     if (!license.push) {
       license = license.type || license.name || license.license || license;
       if (license.split) {
-        license = license.split(/[^a-z0-9]/i);
+        license = license.split(/[^a-z0-9_\-\.]/i);
       } else {
         license = [];
       }

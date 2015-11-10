@@ -156,3 +156,27 @@ test('invalid license format', function(t) {
   t.deepEqual(out.license, []);
   t.end();
 });
+
+test('license dash', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        license : "CC-BY-4.0"
+      }
+    }
+  })
+  t.deepEqual(out.license, ['CC-BY-4.0']);
+  t.end();
+});
+
+test('license underscore', function(t) {
+  var out = normalize({
+    versions: {
+      "0.0.0" : {
+        license : "CC_BY_4.0"
+      }
+    }
+  })
+  t.deepEqual(out.license, ['CC_BY_4.0']);
+  t.end();
+});
