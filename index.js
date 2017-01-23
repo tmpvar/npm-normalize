@@ -44,8 +44,6 @@ module.exports = function(project, version) {
     })[0];
 
     latest = project.versions[latestVersionString];
-  } else {
-    latest = project;
   }
 
   if (!latest) {
