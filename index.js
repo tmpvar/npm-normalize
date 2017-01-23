@@ -55,7 +55,8 @@ module.exports = function(project, version) {
   ret.version = latestVersionString || '';
   ret.time = project.time || [];
   ret.scripts = latest.scripts || project.scripts || {};
-
+  ret.dist = latest.dist || project.dist;
+  ret.gitHead = latest.gitHead;
   ret.readme = latest.readme || project.readme || '';
   if (!ret.readme) {
     delete ret.readme;
