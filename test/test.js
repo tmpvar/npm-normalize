@@ -217,3 +217,14 @@ test('specify version (invalid)', function(t) {
   t.equal(out, null)
   t.end();
 });
+
+test('keywords as string', function(t) {
+  var obj = require('./fixture/keywords-as-string.json')
+  var out = normalize(obj, '0.0.0')
+  t.deepEqual(out.keywords, ['a', 'b', 'c'])
+
+  var out = normalize(obj, '0.1.0')
+  t.deepEqual(out.keywords, ['d', 'e', 'f'])
+
+  t.end();
+});

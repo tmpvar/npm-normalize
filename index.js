@@ -177,7 +177,9 @@ module.exports = function(project, version) {
 
   ret.keywords = latest.keywords || latest.tags || [];
   if (ret.keywords.split) {
-    ret.keywords = ret.keywords.split(',');
+    ret.keywords = ret.keywords.split(',').map(function (s) {
+      return s.trim()
+    });
   }
 
   return ret;

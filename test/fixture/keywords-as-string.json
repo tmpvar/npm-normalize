@@ -1,0 +1,20 @@
+{
+  "name": "multiple-versions",
+  "description": "returns the sleuth-or-spy emoji",
+  "dist-tags": {
+    "latest": "0.1.0",
+    "0.0.0": "0.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "multiple-versions",
+      "version": "0.0.0",
+      "keywords": "a, b, c"
+    },
+    "0.1.0": {
+      "name": "multiple-versions",
+      "version": "0.1.0",
+      "keywords": "d, e,\tf"
+    }
+  }
+}
