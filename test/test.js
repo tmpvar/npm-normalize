@@ -240,3 +240,44 @@ test('no project (error)', function(t) {
   t.notOk(out)
   t.end();
 });
+
+test('has dist-tags but no latest', function(t) {
+  var out = normalize({
+    name: 'no dist-tags',
+    versions: {
+      '0.0.0': {
+        name: 'no dist-tags',
+        version: '0.0.0'
+      },
+      '0.1.0': {
+        name: 'no dist-tags',
+        version: '0.1.0'
+      },
+      '1.0.0': {
+        name: 'no dist-tags',
+        version: '1.0.0'
+      }
+    },
+    'dist-tags': {
+      '0.1.0': '0.1.0',
+      '1.0.0': '1.0.0',
+      '0.0.1': '0.0.1',
+    }
+  })
+
+  t.equal(out.version, '1.0.0')
+  t.end()
+})
+
+test('has dist-tags but invalid latest', function(t) {
+  var out = normalize({
+    name: 'no dist-tags',
+    versions: {},
+    'dist-tags': {
+      latest: 'invalid',
+    }
+  })
+
+  t.notOk(out)
+  t.end()
+})
