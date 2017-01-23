@@ -228,3 +228,15 @@ test('keywords as string', function(t) {
 
   t.end();
 });
+
+test('no project', function(t) {
+  var out = normalize(null)
+  t.notOk(out)
+  t.end();
+});
+
+test('no project (error)', function(t) {
+  var out = normalize({ error: "bad package" })
+  t.notOk(out)
+  t.end();
+});
