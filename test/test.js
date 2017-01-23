@@ -203,3 +203,17 @@ test('undefined homepage', function(t) {
 
   t.end();
 });
+
+test('specify version', function(t) {
+  var obj = require('./fixture/multiple-versions.json')
+  var out = normalize(obj, '0.0.0')
+  t.equal(out.version, '0.0.0')
+  t.end();
+});
+
+test('specify version (invalid)', function(t) {
+  var obj = require('./fixture/multiple-versions.json')
+  var out = normalize(obj, '1.0.0')
+  t.equal(out, null)
+  t.end();
+});

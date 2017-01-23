@@ -3,7 +3,7 @@ var fallbackDate = (new Date("jan 1 2010")).toISOString();
 var url = require('url');
 
 // Normalize npm module structure coming from couch
-module.exports = function(project) {
+module.exports = function(project, version) {
 
   var ret = {};
 
@@ -21,10 +21,20 @@ module.exports = function(project) {
       return semver.gt(a, b) ? -1 : 1;
     });
     project['dist-tags'] = { latest: ret.versions[0] };
+
+    ret.versions.forEach(function (version) {
+      project['dist-tags'][version] = version
+    })
   }
 
   var latestVersionString, latest;
-  if (project['dist-tags'].latest) {
+  if (version) {
+    latestVersionString = version
+    latest = project.versions[version]
+    if (!latest) {
+      return null
+    }
+  } else if (project['dist-tags'].latest) {
     latestVersionString = project['dist-tags'].latest
     latest = project.versions[latestVersionString];
   } else if (Object.keys(project['dist-tags']).length) {
