@@ -1,0 +1,151 @@
+{
+  "_id": "emoji-sleuth-or-spy",
+  "_rev": "3-ad5e97bffa6e35fbfc2c32a15a52292a",
+  "name": "emoji-sleuth-or-spy",
+  "description": "returns the sleuth-or-spy emoji",
+  "dist-tags": {
+    "latest": "1.2.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "emoji-sleuth-or-spy",
+      "version": "1.0.0",
+      "description": "returns the sleuth-or-spyemoji",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "author": {
+        "name": "Josh Hunt"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "node-emoji": "^1.3.0"
+      },
+      "_id": "emoji-sleuth-or-spy@1.0.0",
+      "_shasum": "1de574d74a761c6c98391c429099344bda700d25",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "joshhunt",
+        "email": "josh@trtr.co"
+      },
+      "dist": {
+        "shasum": "1de574d74a761c6c98391c429099344bda700d25",
+        "tarball": "https://registry.npmjs.org/emoji-sleuth-or-spy/-/emoji-sleuth-or-spy-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "joshhunt",
+          "email": "josh@trtr.co"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/emoji-sleuth-or-spy-1.0.0.tgz_1460688961635_0.5054162642918527"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "emoji-sleuth-or-spy",
+      "version": "1.2.0",
+      "description": "returns the sleuth-or-spy emoji",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "author": {
+        "name": "Josh Hunt"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "emoji-100": "^1.0.0"
+      },
+      "_id": "emoji-sleuth-or-spy@1.2.0",
+      "_shasum": "6b3c4af9c34c712094f58a4d41ddfe9b7781c7ae",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "joshhunt",
+        "email": "josh@trtr.co"
+      },
+      "dist": {
+        "shasum": "6b3c4af9c34c712094f58a4d41ddfe9b7781c7ae",
+        "tarball": "https://registry.npmjs.org/emoji-sleuth-or-spy/-/emoji-sleuth-or-spy-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "joshhunt",
+          "email": "josh@trtr.co"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/emoji-sleuth-or-spy-1.2.0.tgz_1461044647529_0.04655598243698478"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "emoji-sleuth-or-spy",
+      "version": "1.2.1",
+      "description": "returns the sleuth-or-spy emoji",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "author": {
+        "name": "Josh Hunt"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "emoji-100": "^1.0.0"
+      },
+      "_id": "emoji-sleuth-or-spy@1.2.1",
+      "_shasum": "7893b62b78df1d9638f45d118cedb35a28e2913f",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "joshhunt",
+        "email": "josh@trtr.co"
+      },
+      "dist": {
+        "shasum": "7893b62b78df1d9638f45d118cedb35a28e2913f",
+        "tarball": "https://registry.npmjs.org/emoji-sleuth-or-spy/-/emoji-sleuth-or-spy-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "joshhunt",
+          "email": "josh@trtr.co"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/emoji-sleuth-or-spy-1.2.1.tgz_1466154940427_0.8761223258916289"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# 🕵\n\n![Tests passing](https://img.shields.io/badge/tests-passing-green.svg) ![Tests passing](https://img.shields.io/badge/coverage-100%-green.svg)\n\nReturns the creative sleuth-or-spy emoji.\n\n## Usage\n\n```javascript\nconst emoji = require('emoji-sleuth-or-spy');\nconsole.log(emoji) // 🕵\n```\n\n## Tests\n\n`emoji-sleuth-or-spy` proudly has 100% test coverage. Run tests with `npm test`.\n",
+  "maintainers": [
+    {
+      "name": "joshhunt",
+      "email": "josh@trtr.co"
+    }
+  ],
+  "time": {
+    "modified": "2016-06-17T09:15:42.826Z",
+    "created": "2016-04-15T02:56:05.285Z",
+    "1.0.0": "2016-04-15T02:56:05.285Z",
+    "1.2.0": "2016-04-19T05:44:07.983Z",
+    "1.2.1": "2016-06-17T09:15:42.826Z"
+  },
+  "author": {
+    "name": "Josh Hunt"
+  },
+  "license": "ISC",
+  "readmeFilename": "readme.md",
+  "_attachments": {}
+}

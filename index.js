@@ -90,16 +90,16 @@ module.exports = function(project) {
   }
 
   if (!ret.homepage) {
-    var repoUrl = String(ret.repository);
+    if (ret.repository) {
+      var repoUrl = String(ret.repository);
 
-    if (repoUrl) {
       if (repoUrl.substring(0, 4) !== 'http') {
         ret.homepage = repoUrl.replace(/.*:\/\//,'http://');
       } else {
         ret.homepage = repoUrl;
       }
     } else {
-      ret.homepage = 'http://npmjs.org/package/' + project.name;
+      ret.homepage = 'https://www.npmjs.com/package/' + project.name;
     }
   }
 

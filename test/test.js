@@ -195,3 +195,11 @@ test('license mispelled', function(t) {
   })
   t.end();
 });
+
+test('undefined homepage', function(t) {
+  var obj = require('./fixture/undefined-homepage.json')
+  var out = normalize(obj)
+  t.equal(out.homepage, 'https://www.npmjs.com/package/emoji-sleuth-or-spy')
+
+  t.end();
+});
