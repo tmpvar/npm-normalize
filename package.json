@@ -19,7 +19,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "semver": "~1.1.4"
+    "semver": "^5.3.0"
   },
   "devDependencies": {
     "tape": "^3.5.0"
